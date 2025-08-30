@@ -66,7 +66,7 @@ export default function SignupPage() {
         <button
           type="button"
           className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-          onClick={() => router.push("/login")} // ✅ back to login
+          onClick={() => router.push("/login")} 
         >
           <CloseOutlined style={{ fontSize: "18px" }} />
         </button>
