@@ -5,6 +5,11 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "../globals.css";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Head from "next/head";
+
+<Head>
+  <title>Login | MyApp</title>
+</Head>
 
 export default function LoginPage() {
   const [name, setName] = useState("");
@@ -179,7 +184,7 @@ export default function LoginPage() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="bg-blue-500 mt-5 shadow-sm text-white px-4 py-2 rounded-md hover:bg-blue-600"
+                  className="bg-blue-500 mt-5 shadow-sm text-white px-4 py-2 rounded-md hover:bg-blue-600 disabled:opacity-50"
                   disabled={loading}
                 >
                   {loading ? "Loading..." : "Login"}
@@ -189,7 +194,8 @@ export default function LoginPage() {
 
             {/* Sign Up link only */}
             <p className="text-sm text-gray-500 mt-5 flex justify-center items-center">
-              Don't have an account?
+               Don&apos;t have an account?
+              {/* Don't have an account? */}
               <Link href="/signup" className="text-blue-500 hover:underline pl-1">
                 Sign up
               </Link>
