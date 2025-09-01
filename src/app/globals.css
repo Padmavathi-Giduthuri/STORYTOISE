@@ -61,6 +61,12 @@ input:-webkit-autofill:active {
   @apply w-full p-3 border rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400;
 }
 
+/* 🔥 Placeholder shadow styles */
+.form-input::placeholder {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  color: #9ca3af; /* Tailwind's gray-400 */
+}
+
 .form-terms {
   @apply text-sm text-gray-600 mb-6;
 }
@@ -76,6 +82,7 @@ input:-webkit-autofill:active {
 .form-note {
   @apply text-sm text-gray-600 text-center mt-4;
 }
+
 .form-note-link {
   @apply text-blue-600 hover:underline;
 }
