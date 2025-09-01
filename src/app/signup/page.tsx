@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { message } from "antd";
-import { CloseOutlined } from "@ant-design/icons"; 
+import { CloseOutlined } from "@ant-design/icons";
 
 export default function SignupPage() {
   const [name, setName] = useState("");
@@ -45,7 +45,7 @@ export default function SignupPage() {
 
       if (res.ok) {
         message.success("Signup successful! Please login.");
-        router.push("/login"); // ✅ redirect to login page
+        router.push("/login");
       } else {
         message.error(data.error || "Signup failed");
       }
@@ -57,88 +57,81 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <form
-        onSubmit={handleSignup}
-        className="relative bg-white p-8 rounded-2xl shadow-lg w-full max-w-md"
-      >
+    <div className="signup-container">
+      <form onSubmit={handleSignup} className="signup-form">
         {/* Cancel / Close icon */}
         <button
           type="button"
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-          onClick={() => router.push("/login")} 
+          className="close-btn"
+          onClick={() => router.push("/login")}
         >
-          <CloseOutlined style={{ fontSize: "18px" }} />
+          <CloseOutlined className="icon-lg" />
         </button>
 
-        <h2 className="text-2xl font-bold mb-6 text-center">Signup Page</h2>
+        <h2 className="form-title">Signup Page</h2>
 
-        <label className="block mb-1 font-medium">Name *</label>
+        <label className="form-label">Name *</label>
         <input
           type="text"
           placeholder="Enter Name"
-          className="w-full p-3 border rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="form-input"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
         />
 
-        <label className="block mb-1 font-medium">Email *</label>
+        <label className="form-label">Email *</label>
         <input
           type="email"
           placeholder="Enter Email"
-          className="w-full p-3 border rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="form-input"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
 
-        <label className="block mb-1 font-medium">Password *</label>
+        <label className="form-label">Password *</label>
         <input
           type="password"
           placeholder="Enter Password"
-          className="w-full p-3 border rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="form-input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
 
-        <label className="block mb-1 font-medium">Confirm Password *</label>
+        <label className="form-label">Confirm Password *</label>
         <input
           type="password"
           placeholder="Confirm Password"
-          className="w-full p-3 border rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="form-input"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
 
         {/* Terms and Privacy Policy */}
-        <p className="text-sm text-gray-600 mb-6">
+        <p className="form-terms">
           I accept the{" "}
-          <a href="#" className="text-blue-600 hover:underline">
+          <a href="#" className="form-link">
             Terms of Service
           </a>{" "}
           and{" "}
-          <a href="#" className="text-blue-600 hover:underline">
+          <a href="#" className="form-link">
             Privacy Policy
           </a>
         </p>
 
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition"
-          disabled={loading}
-        >
+        <button type="submit" className="btn-primary" disabled={loading}>
           {loading ? "Signing up..." : "Sign Up"}
         </button>
 
-        {/* ✅ Note for existing users */}
-        <p className="text-sm text-gray-600 text-center mt-4">
+        {/* Note for existing users */}
+        <p className="form-note">
           Already have an account?{" "}
           <a
             onClick={() => router.push("/login")}
-            className="text-blue-600 hover:underline cursor-pointer"
+            className="form-link cursor-pointer"
           >
             Login
           </a>
