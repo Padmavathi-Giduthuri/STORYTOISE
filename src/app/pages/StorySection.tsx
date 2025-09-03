@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { Card } from 'antd';
+import Image from 'next/image';
 
 const storytoiseAnswers: Record<string, React.ReactNode> = {
   application: (
@@ -11,7 +12,7 @@ const storytoiseAnswers: Record<string, React.ReactNode> = {
       <Link href="/pages/programs" className="text-blue-500 underline hover:text-blue-700">
         Programs page
       </Link>{" "}
-      and fill out the form. We'll send a friendly message back soon!
+      and fill out the form. We will send a friendly message back soon!
     </>
   ),
   content: (
@@ -182,7 +183,7 @@ export default function StorySectionLayout({ children, title }: { children: Reac
       {/* Header */}
       <header className="header-bar">
         <div className="header-logo">
-          <img src="/preview.png" alt="Logo" className="logo-img" />
+          <Image src="/preview.png" alt="Logo" className="logo-img" />
           <span className="logo-title">Storytoise Studio</span>
         </div>
         <nav className="header-nav">
@@ -318,7 +319,7 @@ export default function StorySectionLayout({ children, title }: { children: Reac
                 >
                   ↓
                 </button>
-              )}
+              )} 
               </div>
              
              <div>

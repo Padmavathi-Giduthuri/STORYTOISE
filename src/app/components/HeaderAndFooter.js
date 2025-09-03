@@ -4,6 +4,7 @@ import React from 'react';
 import { Layout, Typography } from "antd";
 import Link from 'next/link';
 import { ArrowLeftOutlined } from "@ant-design/icons";
+import Image from 'next/image';
 
 const { Header, Footer } = Layout;
 const { Paragraph } = Typography;
@@ -13,8 +14,8 @@ export const AppHeader = () => (
 <Header className="app-header bg-white rounded-full shadow-lg p-2 md:p-4 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8">
 <div className="flex items-center space-x-2 md:space-x-4 flex-shrink-0">
 <div className="flex-shrink-0">
- <img
-src="/media.jpg"
+ <Image
+src="/preview.png"
 alt="Storytoise logo"
  className="sider-logo-img" 
  />

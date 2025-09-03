@@ -65,7 +65,7 @@ function getStorytoiseAnswer(input: string) {
       "Hi there! 😊 To join our programs:",
       "• Ask your parent or teacher to visit the Programs page.",
       "• Fill out the form with your details.",
-      "• We'll send a friendly message back soon!",
+      "• We&apos;ll send a friendly message back soon!",
       "• If you need help, just ask me!"
     ];
   }
@@ -237,7 +237,7 @@ export default function Dashboard() {
           <section className="mb-8">
             <Title level={4} className="!mb-2">Contact Us</Title>
             <div className="bg-fuchsia-100 rounded-lg p-4 text-center shadow">
-              <div className="font-bold text-fuchsia-700 mb-2">We'd love to hear from you!</div>
+              <div className="font-bold text-fuchsia-700 mb-2">We&apos;d love to hear from you!</div>
               <div className="text-gray-700 mb-2">Email: <a href="mailto:info@storytoise.com" className="text-fuchsia-700 underline">info@storytoise.com</a></div>
               <div className="text-gray-700 mb-2">Phone: <span className="text-fuchsia-700">+91-1234567890</span></div>
               <div className="text-gray-700">Location: <span className="text-fuchsia-700">Mumbai, India</span></div>
