@@ -1,4 +1,5 @@
 import StorySectionLayout from '../StorySection';
+import { Card } from 'antd';
 
 const testimonials = [
 	{
@@ -21,18 +22,20 @@ const testimonials = [
 export default function TestimonialsPage() {
 	return (
 		<StorySectionLayout title="Testimonials">
-			<div className="testimonials-list">
-				{testimonials.map((t, idx) => (
-					<div key={idx} className="testimonial-card">
-						<p className="testimonial-quote">{t.quote}</p>
-						<div className="testimonial-meta">
-							<span className="testimonial-author">{t.author}</span>
-							<br />
-							<span className="testimonial-org">{t.org}</span>
+			<Card>
+				<div className="testimonials-list">
+					{testimonials.map((t, idx) => (
+						<div key={idx} className="testimonial-card">
+							<p className="testimonial-quote">{t.quote}</p>
+							<div className="testimonial-meta">
+								<span className="testimonial-author">{t.author}</span>
+								<br />
+								<span className="testimonial-org">{t.org}</span>
+							</div>
 						</div>
-					</div>
-				))}
-			</div>
+					))}
+				</div>
+			</Card>
 		</StorySectionLayout>
 	);
 }

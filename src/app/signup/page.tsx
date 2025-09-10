@@ -7,8 +7,9 @@ import { CloseOutlined } from "@ant-design/icons";
 export default function SignupPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState(""); 
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [type, setType] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -16,7 +17,7 @@ export default function SignupPage() {
     e.preventDefault();
     setLoading(true);
 
-    if (!name || !email || !password || !confirmPassword) {
+    if (!name || !type || !email || !password || !confirmPassword) {
       message.error("All fields are required!");
       setLoading(false);
       return;
@@ -38,7 +39,7 @@ export default function SignupPage() {
       const res = await fetch("http://localhost:5000/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password, confirmPassword }),
+        body: JSON.stringify({ name, type, email, password, confirmPassword }),
       });
 
       const data = await res.json();
@@ -57,7 +58,7 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="signup-container">
+    <div>
       <form onSubmit={handleSignup} className="signup-form">
         {/* Cancel / Close icon */}
         <button
@@ -68,7 +69,7 @@ export default function SignupPage() {
           <CloseOutlined className="icon-lg" />
         </button>
 
-        <h2 className="form-title">Signup Page</h2>
+        <h2  className="form-title">Signup Page</h2>
 
         <label className="form-label">Name *</label>
         <input
@@ -79,6 +80,19 @@ export default function SignupPage() {
           onChange={(e) => setName(e.target.value)}
           required
         />
+
+        <label className="form-label">Type *</label>
+        <select
+                      id="type"
+                      className="form-input"
+                      value={type} 
+                      onChange={(e) => setType(e.target.value)}
+                      required
+                    >
+                      <option value="">Select a role</option>
+                      <option value="writer">Writer</option>
+                      <option value="reader">Reader</option>
+                    </select>
 
         <label className="form-label">Email *</label>
         <input

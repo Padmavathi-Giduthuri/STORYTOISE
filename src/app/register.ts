@@ -7,12 +7,13 @@ const prisma = new PrismaClient();
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { username, email, password } = body;
+    const { username, type, email, password } = body;
 
     // Save to DB with Prisma
     const user = await prisma.user.create({
       data: {
         username,
+        type,
         email,
         password, // normally hash before saving
       },

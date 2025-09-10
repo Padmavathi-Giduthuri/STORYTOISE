@@ -1,8 +1,10 @@
 import StorySectionLayout from '../StorySection';
+import { Card } from 'antd';
 
 export default function CreatingWorkshopPage() {
   return (
     <StorySectionLayout title="Creating Workshop">
+      <Card>
       <p className="section-text">
         Join our creative workshops and activities! We offer hands-on sessions where children can learn, create, and collaborate on exciting projects.
       </p>
@@ -11,6 +13,7 @@ export default function CreatingWorkshopPage() {
         <li>Story creation labs</li>
         <li>Group activities and games</li>
       </ul>
+      </Card>
     </StorySectionLayout>
   );
 }

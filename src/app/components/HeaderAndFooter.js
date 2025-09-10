@@ -17,7 +17,9 @@ export const AppHeader = () => (
  <Image
 src="/preview.png"
 alt="Storytoise logo"
- className="sider-logo-img" 
+ className="header-logo"
+    width={50}
+    height={50} 
  />
  </div>
  </div>
